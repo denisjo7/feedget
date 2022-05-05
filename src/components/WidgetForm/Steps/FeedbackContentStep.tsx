@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'phosphor-react';
+import { ArrowLeft, Camera } from 'phosphor-react';
 import { FeedbackType, feedbackTypes } from '..';
 import { CloseButton } from '../../CloseButton';
 
@@ -44,8 +44,15 @@ export function FeedbackContentStep({
 
         <footer className="flex gap-2 mt-2">
           <button
+            className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors"
             type="button"
-            className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 translate-colors"
+          >
+            <Camera className="w-6 h-6 text-zinc-100" />
+          </button>
+
+          <button
+            type="button"
+            className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors"
           >
             Enviar feedback
           </button>
