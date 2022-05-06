@@ -15,4 +15,14 @@ describe('Submit feedback', () => {
       })
     ).resolves.not.toThrow();
   });
+
+  it('should not be able to submit a feedback without type', async () => {
+    await expect(
+      submitFeedback.execute({
+        type: '',
+        comment: 'Example comment',
+        screenshot: 'data:image/png;base64,12h7856d1239hasd2',
+      })
+    ).rejects.toThrow();
+  });
 });
