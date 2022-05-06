@@ -30,6 +30,9 @@ describe('Submit feedback', () => {
         screenshot: 'data:image/png;base64,12h7856d1239hasd2',
       })
     ).rejects.toThrow();
+
+    expect(createFeedbackSpy).not.toHaveBeenCalled();
+    expect(sendMailSpy).not.toHaveBeenCalled();
   });
 
   it('should not be able to submit a feedback without comment', async () => {
@@ -40,6 +43,9 @@ describe('Submit feedback', () => {
         screenshot: 'data:image/png;base64,12h7856d1239hasd2',
       })
     ).rejects.toThrow();
+
+    expect(createFeedbackSpy).not.toHaveBeenCalled();
+    expect(sendMailSpy).not.toHaveBeenCalled();
   });
 
   it('should not be able to submit a feedback with an invalid screenshot', async () => {
@@ -50,5 +56,8 @@ describe('Submit feedback', () => {
         screenshot: 'screenshot.png',
       })
     ).rejects.toThrow();
+
+    expect(createFeedbackSpy).not.toHaveBeenCalled();
+    expect(sendMailSpy).not.toHaveBeenCalled();
   });
 });
