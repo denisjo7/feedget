@@ -1,11 +1,14 @@
 import { SubmitFeedbackUseCase } from './submit-feedback-use-case';
 
-describe('Submit feedback', () => {
-  const submitFeedback = new SubmitFeedbackUseCase(
-    { create: async () => {} },
-    { sendMail: async () => {} }
-  );
+const createFeedbackSpy = jest.fn();
+const sendMailSpy = jest.fn();
 
+const submitFeedback = new SubmitFeedbackUseCase(
+  { create: createFeedbackSpy },
+  { sendMail: sendMailSpy }
+);
+
+describe('Submit feedback', () => {
   it('should be able to submit a feedback', async () => {
     await expect(
       submitFeedback.execute({
