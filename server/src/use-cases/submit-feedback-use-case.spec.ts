@@ -17,6 +17,9 @@ describe('Submit feedback', () => {
         screenshot: 'data:image/png;base64,12h7856d1239hasd2',
       })
     ).resolves.not.toThrow();
+
+    expect(createFeedbackSpy).toHaveBeenCalled();
+    expect(sendMailSpy).toHaveBeenCalled();
   });
 
   it('should not be able to submit a feedback without type', async () => {
